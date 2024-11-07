@@ -1,0 +1,43 @@
+{{ 'style.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'store-locator-mm.js' | asset_url }}" defer></script>
+
+{{ 'store-locator-mm.css' | asset_url | stylesheet_tag }}
+
+<div class="main-container-whole">
+  <h1>{{ block.settings.heading_text }}</h1>
+<div id="googleMap" style="width:100%;height:400px;"></div>
+<div class="app-container-am">
+  <div class="search-container">
+    <input type="text" class="zip-code-input" placeholder="ZIP CODE">
+    <button class="find-store-button" style="--button-color:{{block.settings.colour}}">FIND STORE</button>
+  </div>
+  <div class="store-map-container">
+    <div id="style-8" class="store-container-am isolate"></div>
+    <div id="olaMap" style="width:100%;height:400px;"></div>
+  </div>
+</div>
+</div>
+{% comment %}
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxR0T3QQwD2Pqhfvozpqi_b4IG9wh510o&callback=myMap"
+    defer
+  ></script>
+{% endcomment %}
+<script src="{{'olamaps-js-sdk.umd.js'| asset_url}}"></script>
+
+{% schema %}
+{
+  "name": "Store locator",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading text",
+      "default": "Store Locator"
+    },
+    { "type": "color", "id": "colour", "label": "Button Colour", "default": "#ff0000" }
+  ]
+}
+{% endschema %}

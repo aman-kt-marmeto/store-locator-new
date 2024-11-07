@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "d721b870f1c7bab2be113ca2e4172ff0"
+name = "new-store-locator"
+handle = "new-store-locator"
+application_url = "https://virtue-bedding-fcc-attacked.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "marmeto-theme.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = ""
+
+[auth]
+redirect_urls = [
+  "https://virtue-bedding-fcc-attacked.trycloudflare.com/auth/callback",
+  "https://virtue-bedding-fcc-attacked.trycloudflare.com/auth/shopify/callback",
+  "https://virtue-bedding-fcc-attacked.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+[pos]
+embedded = false
